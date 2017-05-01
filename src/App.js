@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import BookForm from './BookForm';
 import Catalogue from './Catalogue';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.books = [
       { id: 0, author: 'Shakespeare', title: 'Macbeth' },
       { id: 1, author: 'Salinger', title: 'Catcher in the Rye' },
@@ -13,7 +14,10 @@ class App extends Component {
   }
   render() {
     return (
-      <Catalogue books={this.books} />
+      <div>
+        <BookForm />
+        <Catalogue books={this.books} />
+      </div>
     );
   }
 }
