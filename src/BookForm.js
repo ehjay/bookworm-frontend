@@ -8,20 +8,13 @@ class BookForm extends Component {
       title: '',
       author: '',
     };
-
-    this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleAuthorChange = this.handleAuthorChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
-
   handleTitleChange(event) {
     this.setState({title: event.target.value});
   }
-
   handleAuthorChange(event) {
     this.setState({author: event.target.value});
   }
-
   handleSubmit(event) {
     if (this.state.title && this.state.author) {
       axios.post('http://localhost:8080/book', {
@@ -39,17 +32,16 @@ class BookForm extends Component {
     }
     event.preventDefault();
   }
-
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={(event) => this.handleSubmit(event)}>
         <label>
           Title:
-          <input type="text" value={this.state.title} onChange={this.handleTitleChange} />
+          <input type="text" value={this.state.title} onChange={(event) => this.handleTitleChange(event)} />
         </label>
         <label>
           Author:
-          <input type="text" value={this.state.author} onChange={this.handleAuthorChange} />
+          <input type="text" value={this.state.author} onChange={(event) => this.handleAuthorChange(event)} />
         </label>
         <input type="submit" value="Submit" />
       </form>
