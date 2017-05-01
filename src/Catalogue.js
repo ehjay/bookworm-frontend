@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import Book from './Book';
 
 class Catalogue extends Component {
   render() {
     return (
-      <p>Catalogue</p>
+      <Book />
     );
   }
 }
