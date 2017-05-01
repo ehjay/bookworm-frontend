@@ -4,9 +4,16 @@ import './App.css';
 import Catalogue from './Catalogue';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.books = [
+      { id: 0, author: 'Shakespeare', title: 'Macbeth' },
+      { id: 1, author: 'Salinger', title: 'Catcher in the Rye' },
+    ];
+  }
   render() {
     return (
-      <Catalogue />
+      <Catalogue books={this.books} />
     );
   }
 }
