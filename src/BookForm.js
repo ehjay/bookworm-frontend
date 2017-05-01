@@ -8,6 +8,7 @@ class BookForm extends Component {
       title: '',
       author: '',
     };
+    this.loadBooks = props.loadBooks;
   }
   handleTitleChange(event) {
     this.setState({title: event.target.value});
@@ -21,6 +22,9 @@ class BookForm extends Component {
         title: this.state.title,
         author: this.state.author,
       })
+      .then(() => {
+        this.loadBooks();
+      })
       .catch((err) => {
         console.error('Error creating new book', err);
       });
@@ -30,7 +34,6 @@ class BookForm extends Component {
         author: '',
       });
 
-      this.loadBooks();
     }
     event.preventDefault();
   }

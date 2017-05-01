@@ -17,15 +17,15 @@ class App extends Component {
     axios.get('http://localhost:8080/books')
       .then((response) => {
         this.setState({
-          books: response.data,
+          books: response.data || [],
         });
       });
   }
   render() {
     return (
       <div>
-        <BookForm loadBooks={this.loadBooks} />
-        <Catalogue books={this.state.books} />
+        <BookForm loadBooks={this.loadBooks.bind(this)} />
+        <Catalogue books={this.state.books} loadBooks={this.loadBooks.bind(this)} />
       </div>
     );
   }

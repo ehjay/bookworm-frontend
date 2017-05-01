@@ -7,7 +7,7 @@ class Catalogue extends Component {
       <ul>
         {this.props.books.map((book) => {
           return <li key={book.id}>
-            <Book id={book.id} author={book.author} title={book.title} />
+            <Book id={book.id} author={book.author} title={book.title} loadBooks={this.props.loadBooks} />
           </li>;
         })}
       </ul>
