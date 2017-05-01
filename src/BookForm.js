@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class BookForm extends Component {
   constructor(props) {
@@ -23,7 +24,14 @@ class BookForm extends Component {
 
   handleSubmit(event) {
     if (this.state.title && this.state.author) {
-      // send to backend
+      axios.post('http://localhost:8080/book', {
+        title: this.state.title,
+        author: this.state.author,
+      })
+      .catch((err) => {
+        console.error('Error creating new book', err);
+      });
+
       this.setState({
         title: '',
         author: '',
