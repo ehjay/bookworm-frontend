@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 
 import BookForm from './BookForm';
 import Catalogue from './Catalogue';
@@ -7,16 +8,24 @@ import Catalogue from './Catalogue';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.books = [
-      { id: 0, author: 'Shakespeare', title: 'Macbeth' },
-      { id: 1, author: 'Salinger', title: 'Catcher in the Rye' },
-    ];
+    this.state = {
+      books: [],
+    };
+    this.loadBooks();
+  }
+  loadBooks() {
+    axios.get('http://localhost:8080/books')
+      .then((response) => {
+        this.setState({
+          books: response.data,
+        });
+      });
   }
   render() {
     return (
       <div>
-        <BookForm />
-        <Catalogue books={this.books} />
+        <BookForm loadBooks={this.loadBooks} />
+        <Catalogue books={this.state.books} />
       </div>
     );
   }

@@ -29,6 +29,8 @@ class BookForm extends Component {
         title: '',
         author: '',
       });
+
+      this.loadBooks();
     }
     event.preventDefault();
   }
