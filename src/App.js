@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import BookForm from './BookForm';
 import Catalogue from './Catalogue';
+import Header from './Header';
 
 class App extends Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Header />
         <BookForm loadBooks={this.loadBooks.bind(this)} />
         <Catalogue books={this.state.books} loadBooks={this.loadBooks.bind(this)} />
       </div>
