@@ -10,7 +10,9 @@ class Header extends Component {
           name='book'
           size='2x'
         />
-        Bookworm
+        <h3>
+          Bookworm
+        </h3>
       </div>
     );
   }
