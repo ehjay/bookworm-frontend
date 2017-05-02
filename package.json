@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.1",
+    "font-awesome": "^4.7.0",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-fontawesome": "^1.6.1"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"

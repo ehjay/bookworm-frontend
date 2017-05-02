@@ -6,6 +6,10 @@ import BookForm from './BookForm';
 import Catalogue from './Catalogue';
 import Header from './Header';
 
+// third party
+
+import '../node_modules/font-awesome/css/font-awesome.min.css';
+
 class App extends Component {
   constructor(props) {
     super(props);
