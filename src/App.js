@@ -9,6 +9,7 @@ import Header from './Header';
 // third party
 
 import '../node_modules/font-awesome/css/font-awesome.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
+      <div className='container'>
         <Header />
         <BookForm loadBooks={this.loadBooks.bind(this)} />
         <Catalogue books={this.state.books} loadBooks={this.loadBooks.bind(this)} />
