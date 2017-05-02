@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './Book.css';
 
 class Book extends Component {
   constructor(props) {
@@ -17,10 +18,24 @@ class Book extends Component {
   }
   render() {
     return (
-      <div>
-        <p onClick={() => this.deleteBook(this.props.id)}>X</p>
-        <p>Title: {this.props.title}</p>
-        <p>Author: {this.props.author}</p>
+      <div className='row book'>
+        <div className='col-sm-4'>
+          <strong>{this.props.title}</strong>
+        </div>
+        <div className='col-sm-2'>
+          by
+        </div>
+        <div className='col-sm-4'>
+          <strong>{this.props.author}</strong>
+        </div>
+        <div className='col-sm-2'>
+          <i
+            className='fa fa-times'
+            onClick={() => this.deleteBook(this.props.id)}
+          ></i>
+        </div>
+        <div className='col-sm-2'>
+        </div>
       </div>
     );
   }
